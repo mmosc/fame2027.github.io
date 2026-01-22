@@ -74,17 +74,24 @@
             height: 10vh; /* 10% of the vertical height */
             width: 100%;
             display: flex;
-            justify-content: space-evenly; /* Align items to the right */
+            justify-content: center; /* Center the navigation */
             align-items: center;
-            /* padding: 0 20px; */
             font-family: montserrat_medium;
-            font-size: 20px;
+            font-size: 18px;
+        }
+
+        nav div {
+            display: flex;
+            gap: 1.5vw;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
             color: var(--secondary-color);
-            margin-right: 2vw; /* Adjust the margin as needed */
+            white-space: nowrap;
         }
 
         nav a:hover{
@@ -241,6 +248,17 @@
         }
 
         @media (max-width: 900px) {
+            nav {
+                font-size: 14px;
+                height: auto;
+                min-height: 10vh;
+                padding: 10px 0;
+            }
+
+            nav div {
+                gap: 1vw;
+            }
+
             .banner-container{
                 height: 30vh;
             }
@@ -264,17 +282,20 @@
     <!-- Navbar -->
     <nav>
         <div>
-            <a href="./index.html">Home</a>
-            <a href="#introduction">Introduction</a>
+            <a href="#home">Home</a>
+            <a href="#task">Task</a>
             <a href="#dataset">Dataset</a>
-            <a href="#publications">Publications</a>
-            <a href="#challenge">Challenge</a>
+            <a href="#baseline">Baseline</a>
+            <a href="#evaluation">Evaluation</a>
+            <a href="#submission">Submission</a>
+            <a href="#registration">Registration</a>
+            <a href="#organizers">Organizers</a>
         </div>
     </nav>
     <!-- //////////////////////////////////////////////////////////////////////// -->
 
-    
-    <div class="body-container">
+
+    <div class="body-container" id="home">
         <!-- banner -->
         <div class="banner-container">
             <div class="card-container">
@@ -357,6 +378,182 @@
         </div>
         <!-- //////////////////////////////////////////////////////////////////////// -->
 
+        <!-- Task -->
+        <div class="descriptions" id="task">
+            <p class="description-headings">TASK</p>
+            <p><b>Polyglot Speaker Identification with Missing Modality</b></p>
+            <p>
+                The goal of the POLYSIM 2027 challenge is to identify speakers across multiple languages when either
+                the face or voice modality is missing. Participants must develop models that can handle three scenarios:
+                (1) voice-only identification when facial data is unavailable, (2) face-only identification when vocal
+                data is unavailable, and (3) multimodal identification when both modalities are available. The challenge
+                focuses on maintaining robust speaker identification performance across different languages (polyglot)
+                even when one modality is completely absent, reflecting real-world constraints where complete multimodal
+                data is not always available.
+            </p>
+            <div class="figures">
+                <img src="./static/images/fame_2026.jpg">
+                <p>Figure 2: The POLYSIM 2027 Challenge focuses on speaker identification across multiple languages with
+missing modalities (either face or voice may be absent).</p>
+            </div>
+        </div>
+
+        <!-- Baseline Model -->
+        <div class="descriptions" id="baseline" style="background-color: var(--tertiary-color);">
+            <p class="description-headings">BASELINE MODEL</p>
+            <p>
+                We provide a baseline model that has been trained on extracted features for facial and
+                audio data (vggface for images and utterance level aggregator for voices). To learn a discriminative
+                joint face-voice embedding for F-V association tasks, we develop a new framework for crossmodal face-voice
+                association (See Fig. 3) that is fundamentally a two-stream pipeline and features a light-weight
+                module that exploits complementary cues from both face and voice embeddings and facilitates discriminative identity
+                mapping via orthogonality constraints
+                <br> <br>
+                Link to the paper:
+                <a href="https://ieeexplore.ieee.org/abstract/document/9747704/">
+                    Fusion and Orthogonal Projection for Improved Face-Voice Association
+                </a>
+                <br>
+                Link to the Paper's code:
+                <a href="https://github.com/msaadsaeed/FOP">
+                    https://github.com/msaadsaeed/FOP
+                </a>
+                <br>
+                Link to the Baseline code:
+                <a href="https://github.com/mavceleb/mavceleb_baseline">
+                    https://github.com/mavceleb/mavceleb_baseline
+                </a>
+            </p>
+        </div>
+        <div class="figures">
+            <img src="./static/images/methodology.png">
+            <p>Figure 3: Diagram showing our methodology.</p>
+        </div>
+
+        <!-- Evaluation Metrics -->
+        <div class="descriptions" id="evaluation" style="background-color: var(--tertiary-color); padding-bottom: 2vh;">
+            <p class="description-headings">EVALUATION METRICS</p>
+            <p>
+                We are considering <b>Equal Error Rate (EER)</b> as the metric for
+                evaluating the challenge performance. We expect the challenge participants to submit a output score
+                file for every test pairs to indicate how confident the system believes to have a match between the
+                face and voice or in other words, the face and voice belongs to the same person. The higher the
+                score is, the larger is the confidence of being the face and voice from the same person. In real-world
+                applications, people may set a threshold to determine the if the pair belongs to same or different
+                person as binary output. With the threshold higher, the false acceptance rate (FAR) will become lower,
+                and the false rejection rate (FRR) will become higher. The EER is that optial point when both the errors
+                FAR and FRR are equal. Therefore, EER becomes suitable to evaluate the performance of systems than the
+                conventional accuracy since it independent of the threshold. Finally, the lower the EER it can characterize
+                a better system.
+                For more information please see <a href="https://arxiv.org/abs/2508.04592">evaluation plan.</a>
+            </p>
+        </div>
+
+        <!-- Submission -->
+        <div class="descriptions" id="submission">
+            <p class="description-headings">SUBMISSION</p>
+            <p>
+                Within the directory containing the submission files, use
+                zip archive.zip *.txt and do not zip the folder. Files should be
+                named as:
+                <ul>
+                <code>
+                    <li>sub score English heard.txt</li>
+                    <li>sub score English unheard.txt</li>
+                    <li>sub score Urdu heard.txt</li>
+                    <li>sub score Urdu unheard.txt</li>
+                </code>
+                </ul>
+                Files are submitted through Codalab in the evaluation phase
+                3 times per day.
+            </p>
+
+            <p>
+                We provide both train and test splits for v3 of MAV-Celeb dataset.
+                Participants can use this split for fine-tuning their method. However, for v1 the test files
+                are in format as below:
+                <ul>
+                <code>
+                    <li>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg</li>
+                    <li>tog3zj45 voices/English/00001.wav faces/English/00001.jpg</li>
+                    <li>ky5xfj1d voices/English/00002.wav faces/English/00002.jpg</li>
+                    <li>yx4nfa35 voices/English/01062.wav faces/English/01062.jpg</li>
+                    <li>bowsaf5e voices/English/01063.wav faces/English/01063.jpg</li>
+                </code>
+                </ul>
+                We have kept the ground truth for fair evaluation during POLYSIM challenge. Participants are expected
+                to compute and submit a text file including the id and L2 Scores in the following format:
+                <ul>
+                <code>
+                    <li>ysuvkz41 0.9988</li>
+                    <li>tog3zj45 0.1146</li>
+                    <li>ky5xfj1d 0.6514</li>
+                    <li>yx4nfa35 1.5321</li>
+                    <li>bowsaf5e 1.6578</li>
+                </code>
+                </ul>
+                The overall score will be computed as:<br>
+                <p style="text-align: center;"><code><b>Overall Score = (Sum of all EERs) / 4</b></code></p>
+                <br>
+                Link to Codalab: <a href="https://www.codabench.org/competitions/9467/">Codalab/Codabench</a>
+            </p>
+        </div>
+
+        <!-- Registration & Timeline -->
+        <div class="descriptions" id="registration" style="background-color: var(--tertiary-color); padding-bottom: 2vh;">
+            <p class="description-headings">REGISTRATION & TIMELINE</p>
+            <p>Registration details for the "POLYSIM Challenge 2027" will be announced soon.</p>
+            <p>For any queries please contact us at our email <a href="mailto:mavceleb@gmail.com">mavceleb@gmail.com</a>.</p>
+            <br>
+            <p><b>Timeline:</b></p>
+            <ul>
+                <li>Registration Period: 15 August – 15 October 2026</li>
+                <li>Progress Phase: 1 September – 31 October 2026</li>
+                <li>Evaluation Phase: 1 November – 15 November 2026</li>
+                <li>Challenge Results: 16 November 2026</li>
+                <li>Submission of System Descriptions: 25 November 2026</li>
+                <li>ACM MM Grand Challenge Paper Submission: 07 December 2026</li>
+            </ul>
+        </div>
+
+        <!-- Organizers -->
+        <div class="descriptions" id="organizers">
+            <p class="description-headings">ORGANIZERS</p>
+            <p>
+                <a href="https://hcai.at/persons/moscati/">Marta Moscati</a> -
+                <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria</span> <br>
+
+            <a href="https://ahmedembeddedxx.github.io/">Ahmed Abdullah</a> -
+            <span style="font-size: 12px;">National University of Computer and Emerging Sciences, Pakistan</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=uyhEJ5IAAAAJ&hl=en">Muhammad Saad Saeed</a> -
+            <span style="font-size: 12px;">University of Michigan, USA</span> <br>
+
+            <a href="https://shahnawazgrewal.github.io/">Shah Nawaz</a> -
+            <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria</span> <br>
+
+            <a href="https://sites.google.com/view/rohankumardas">Rohan Kumar Das</a> -
+            <span style="font-size: 12px;">Fortemedia Singapore, Singapore</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=nFxWrXEAAAAJ&hl=en">Muhammad Zaigham Zaheer</a> -
+            <span style="font-size: 12px;">Mohamed bin Zayed University of Artificial Intelligence, United Arab Emirates</span> <br>
+
+            <a href="#">Junaid Mir</a> -
+            <span style="font-size: 12px;">University of Engineering and Technology Taxila, Pakistan</span> <br>
+
+            <a href="https://fms.uettaxila.edu.pk/Profile/haroon.yousaf">Muhammad Haroon Yousaf</a> -
+            <span style="font-size: 12px;">University of Engineering and Technology Taxila, Pakistan</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=MZGQT2wAAAAJ&hl=en">Khalid Malik</a> -
+            <span style="font-size: 12px;">University of Michigan, USA</span> <br>
+
+            <a href="http://www.mschedl.eu/">Markus Schedl</a> -
+            <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria | Human-centered AI Group, AI Lab, Linz Institute of Technology, Austria</span> <br>
+
+        </p>
+
+        </div>
+
         <br>
         <br>
         <br>
@@ -393,52 +590,31 @@
         </div>
         <!-- /////////////////////////////////////////////////////////////////////// -->
 
-        <!-- Challenge -->
-        <div class="descriptions" id="challenge">
-            <p class="description-headings">CHALLENGE</p>
-            <p>The POLYSIM 2027 Challenge (Polyglot Speaker Identification with Missing Modality) focuses on identifying speakers
-                across multiple languages when either the face or voice modality is missing. The complexity of the task increases
-                when we consider multiple spoken languages and incomplete multimodal data. This introduces challenges as predictive
-                models must handle missing modalities while establishing robust speaker identification across different languages.
-                The aim of the challenge is to develop techniques that tackle missing modality scenarios and improve results on
-                the polyglot speaker identification task using adaptive multi-modal and cross-language techniques.</p>
-                <br>
-                <p style="text-align: center;">Click to see more details!</p>
+        <!-- Past Challenges -->
+        <div class="descriptions" id="past-challenges" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
+            <p class="description-headings">PAST CHALLENGES</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                <a href="mavceleb-2026/competition.html" style="all: initial; width: 100%; display: flex; justify-content: center;">
+                    <div class="challenge-button-div" style="width: 100%;">
+                        <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
+                            <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
+                            FAME Challenge 2026
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mavceleb-2024/competition.html" style="all: initial; width: 100%; display: flex; justify-content: center;">
+                    <div class="challenge-button-div" style="width: 100%;">
+                        <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
+                            <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
+                            FAME Challenge 2024
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-        <a href="./competition.html" style="all: initial;">
-            <div class="challenge-button-div">
-                <div class="challenge-button">
-                    <p class="description-headings" style="padding: 0; margin: 0%; color: white;">POLYSIM 2027</p>
-                </div>
-            </div>
-        </a>
-
-        <br>
-        <br>
-        <!-- 2026 Challenge Button (Old) -->
-        <a href="mavceleb-2026/competition.html" style="all: initial;">
-            <div class="challenge-button-div">
-            <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
-                <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
-                FAME Challenge 2026
-                </p>
-            </div>
-            </div>
-        </a>
-
-        <br>
-        <br>
-        <!-- 2024 Challenge Button (Old) -->
-        <a href="mavceleb-2024/competition.html" style="all: initial;">
-            <div class="challenge-button-div">
-            <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
-                <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
-                FAME Challenge 2024
-                </p>
-            </div>
-            </div>
-        </a>
-
 
         <!-- ///////////////////////////////////////////////////////////////////////// -->
         
