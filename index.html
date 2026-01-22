@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAV-CELEB - Multi-lingual Audio Visual Dataset | POLYSIM 2027</title>
     <style>
         /* Including Monsterrat font */
         @font-face {
@@ -290,23 +291,25 @@
         <div class="descriptions" id="introduction">
             <p class="description-headings">INTRODUCTION</p>
             <p>
-                Recent years have seen a surge in finding association between faces and voices within a cross-modal 
-                biometric application along with speaker recognition. Inspired from this, we introduce a challenging 
-                task in establishing association between faces and voices across multiple languages spoken by the same 
-                set of persons. The aim of this paper is to answer two closely related questions: “Is face-voice 
-                association language independent?” and “Can a speaker be recognized irrespective of the spoken language?”. 
+                Recent years have seen significant advances in multimodal biometric systems that leverage both facial and
+                vocal characteristics for speaker identification. However, real-world applications often face scenarios where
+                one modality is unavailable due to technical constraints, privacy concerns, or environmental factors. Building
+                upon this challenge, we introduce the POLYSIM 2027 task that focuses on polyglot (multilingual) speaker
+                identification when either the face or voice modality is missing. This addresses the critical question:
+                "Can speakers be accurately identified across multiple languages when only partial multimodal information is available?".
                 <br><br>
-                These two questions are important to understand effectiveness and to boost development of multilingual biometric 
-                systems. To answer these, we collected a Multilingual Audio-Visual dataset, containing human speech clips of 154 
-                identities with 3 language annotations extracted from various videos uploaded online. Extensive experiments 
-                on the two splits of the proposed dataset have been performed to investigate and answer these novel research 
-                questions that clearly point out the relevance of the multilingual problem.
+                This question is crucial for developing robust multilingual biometric systems that can operate under real-world
+                constraints. To support this research, we provide the Multilingual Audio-Visual (MAV-CELEB) dataset, containing
+                human speech clips of 154 identities with multiple language annotations extracted from various videos uploaded
+                online. The dataset enables investigation of speaker identification across languages while handling missing
+                modality scenarios, addressing both the polyglot and incomplete data challenges that are prevalent in
+                practical applications.
             </p>
         </div>
         <div class="figures">
             <img src="./static/images/homepage_task_diag.jpg">
             <p>
-                Figure 1: Diagram showing cross-modal verification and matching task on Face-Voice Association with multiple languages.
+                Figure 1: Diagram showing multimodal speaker identification across multiple languages with missing modality scenarios.
             </p>
         </div>
         <!-- //////////////////////////////////////////////////////////////////////// -->
