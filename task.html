@@ -197,7 +197,7 @@
             <a href="index.html">Home</a>
             <a href="task.html">Task</a>
             <a href="resources.html">Resources</a>
-            <a href="participate.html#evaluation">Evaluation</a>
+            <a href="task.html#evaluation">Evaluation</a>
             <a href="participate.html">Participate</a>
             <a href="index.html#organizers">Organizers</a>
         </div>
@@ -346,6 +346,41 @@ missing modalities (either face or voice may be absent).</p>
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Evaluation Protocol -->
+        <div class="descriptions" id="evaluation" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
+            <p class="description-headings">EVALUATION PROTOCOL</p>
+
+            <p><b>Metrics</b></p>
+            <p>Performance will be evaluated using:</p>
+            <ul>
+                <li>Top-1 Accuracy</li>
+                <li>Top-5 Accuracy</li>
+                <li>Macro F1-Score</li>
+            </ul>
+
+            <p>
+                We are also considering <b>Equal Error Rate (EER)</b> as an additional metric for
+                evaluating the challenge performance. We expect the challenge participants to submit an output score
+                file for every test pair to indicate how confident the system believes there is a match between the
+                face and voice, or in other words, that the face and voice belong to the same person. The higher the
+                score, the larger the confidence that the face and voice are from the same person. In real-world
+                applications, people may set a threshold to determine if the pair belongs to same or different
+                person as binary output. With a higher threshold, the false acceptance rate (FAR) will become lower,
+                and the false rejection rate (FRR) will become higher. The EER is the optimal point when both errors
+                FAR and FRR are equal. Therefore, EER is suitable to evaluate the performance of systems compared to
+                conventional accuracy since it is independent of the threshold. Finally, a lower EER characterizes
+                a better system.
+                For more information please see the <a href="https://arxiv.org/abs/2508.04592">evaluation plan.</a>
+            </p>
+
+            <p><b>Ranking Criteria</b></p>
+            <ul>
+                <li>Scores are computed separately for P3, P4, P5, and P6</li>
+                <li>Final ranking is based on the average performance across all settings</li>
+                <li>Special emphasis is placed on P4 and P6 (missing-modality robustness)</li>
+            </ul>
         </div>
 
         <!-- Footer -->
