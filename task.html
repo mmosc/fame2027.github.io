@@ -195,7 +195,6 @@
     <nav>
         <div>
             <a href="index.html">Home</a>
-            <a href="overview.html">Overview</a>
             <a href="task.html">Task</a>
             <a href="resources.html">Resources</a>
             <a href="participate.html#evaluation">Evaluation</a>
@@ -214,10 +213,28 @@
             </div>
         </div>
 
-        <!-- Task Overview -->
-        <div class="descriptions" id="task">
+        <!-- Task -->
+        <div class="descriptions" id="task" style="padding-bottom: 4vh;">
             <p class="description-headings">TASK</p>
-            <p><b>Polyglot Speaker Identification with Missing Modality</b></p>
+
+            <p><b>Motivation</b></p>
+            <p>
+                Multimodal speaker classification systems typically assume the availability of all modalities
+                during inference. However, in real-world scenarios such as multimedia retrieval, surveillance,
+                and teleconferencing, one or more modalities may be unavailable due to occlusion, sensor
+                failure, or data corruption. Additionally, most existing systems are trained and tested on the same language, limiting
+                their applicability in multilingual environments.
+            </p>
+            <p>
+                This challenge aims to push the boundaries of:
+            </p>
+            <ul>
+                <li>Missing modality learning</li>
+                <li>Multimodal robustness</li>
+                <li>Cross-lingual speaker classification</li>
+            </ul>
+
+            <p><b>Task Description</b></p>
             <p>
                 The goal of the POLYSIM 2027 challenge is to identify speakers across multiple languages when either
                 the face or voice modality is missing. Participants must develop models that can handle three scenarios:
@@ -227,25 +244,6 @@
                 even when one modality is completely absent, reflecting real-world constraints where complete multimodal
                 data is not always available.
             </p>
-            <div class="figures">
-                <img src="./static/images/fame_2026.jpg">
-                <p>Figure 1: The POLYSIM 2027 Challenge focuses on speaker identification across multiple languages with
-missing modalities (either face or voice may be absent).</p>
-            </div>
-
-            <p><b>Key Objectives</b></p>
-            <ul>
-                <li>Benchmark state-of-the-art multimodal speaker identification systems</li>
-                <li>Evaluate robustness when face or voice modality is completely absent</li>
-                <li>Assess cross-lingual generalization across diverse language pairs</li>
-            </ul>
-        </div>
-
-        <!-- Task Description -->
-        <div class="descriptions" id="task-description" style="background-color: var(--tertiary-color);">
-            <p class="description-headings">TASK DESCRIPTION</p>
-
-            <p><b>Task Definition</b></p>
             <p>
                 The task is closed-set speaker classification using:
             </p>
@@ -256,11 +254,13 @@ missing modalities (either face or voice may be absent).</p>
             <p>
                 Participants must design a single unified model that can handle different testing conditions without retraining.
             </p>
-        </div>
+            <div class="figures">
+                <img src="./static/images/fame_2026.jpg">
+                <p>Figure 1: The POLYSIM 2027 Challenge focuses on speaker identification across multiple languages with
+missing modalities (either face or voice may be absent).</p>
+            </div>
 
-        <!-- Task Settings -->
-        <div class="descriptions" id="task-settings" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
-            <p class="description-headings">TASK SETTINGS</p>
+            <p><b>Task Settings</b></p>
             <p>
                 The challenge includes four task settings, covering multimodal, missing-modality, and cross-lingual scenarios.
             </p>
