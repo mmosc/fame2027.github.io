@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLYSIM 2027 - References</title>
+    <style>
+        /* Including Monsterrat font */
+        @font-face {
+            font-family: 'montserrat_regular';
+            src: url('./static/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'montserrat_medium';
+            src: url('./static/fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'montserrat_bold';
+            src: url('./static/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'montserrat_lightItalic';
+            src: url('./static/fonts/Montserrat/static/Montserrat-LightItalic.ttf') format('truetype');
+        }
+
+        /* Defining base properties */
+        :root {
+            --main-color: #0d0c1d;
+            --secondary-color: rgba(249, 249, 249, 1);
+            --tertiary-color: rgba(230, 230, 230, 1);
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: montserrat_regular;
+            color: black;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("static/images/bg_image.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            z-index: 100;
+            background-color: var(--main-color);
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: montserrat_medium;
+            font-size: 18px;
+        }
+
+        nav div {
+            display: flex;
+            gap: 1.5vw;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            white-space: nowrap;
+        }
+
+        nav a:hover{
+            color: #e74c3c;
+        }
+
+        /* Body container */
+        .body-container{
+            width: 60%;
+            background-color: var(--secondary-color);
+            margin: 0;
+            margin-top: 10vh;
+        }
+
+        /* Banner */
+        .banner-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 30vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./static/images/image_new.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
+
+        .card-container{
+            display: flex;
+            width: 350px;
+            background-color: var(--secondary-color);
+            opacity: 0.85;
+            height: 100px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 26px;
+            font-family: montserrat_medium;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s;
+        }
+
+        .card-container:hover{
+            transform: scale(1.02);
+        }
+
+        /* Description data */
+        .descriptions{
+            padding: 0 40px;
+        }
+
+        .description-headings{
+            font-family: montserrat_bold;
+            font-size: 28px;
+            padding-top: 8vh;
+            padding-bottom: 2vh;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Publications */
+        .publications-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Challenge button */
+        .challenge-button-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .challenge-button{
+            border-radius: 50px;
+            padding: 10px;
+            width: 40%;
+            background-color: #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .challenge-button:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        .footer{
+            margin-top: 10vh;
+            width: 100%;
+            height: 5vh;
+            background-color: var(--main-color);
+        }
+
+        @media (max-width: 1200px) {
+            .body-container{
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                font-size: 14px;
+                height: auto;
+                min-height: 10vh;
+                padding: 10px 0;
+            }
+
+            nav div {
+                gap: 1vw;
+            }
+
+            .banner-container{
+                height: 25vh;
+            }
+
+            .challenge-button{
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="task.html">Task</a>
+            <a href="resources.html">Resources</a>
+            <a href="references.html">References</a>
+        </div>
+    </nav>
+
+    <div class="body-container">
+        <!-- banner -->
+        <div class="banner-container">
+            <div class="card-container">
+                <p>
+                    <span style="font-family: montserrat_bold;"> References </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Publications -->
+        <div class="descriptions" id="publications">
+            <p class="description-headings">PAPERS</p>
+            <div class="publications-container">
+
+                <p>
+                    <b>Dataset Paper</b>
+                </p>
+                <a href="https://openaccess.thecvf.com/content/CVPR2021W/MULA/papers/Nawaz_Cross-Modal_Speaker_Verification_and_Recognition_A_Multilingual_Perspective_CVPRW_2021_paper.pdf"
+                style="font-size: 14px;">
+                    Cross-modal Speaker Verification and Recognition: A Multilingual Perspective
+                </a>
+                <p style="font-size: 14px; margin-bottom: 15px; width: 60%; text-align: center;">
+                    <b>Authors:</b> Nawaz, Shah and Saeed, Muhammad Saad and Morerio, Pietro and Mahmood, Arif and Gallo, Ignazio and Yousaf,
+                    Muhammad Haroon and Del Bue, Alessio
+                </p>
+
+                <p>
+                    <b>Baseline Paper</b>
+                </p>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9747704/"
+                style="font-size: 14px;">
+                    Fusion and Orthogonal Projection for Improved Face-Voice Association
+                </a>
+                <p style="font-size: 14px; margin-bottom: 20px; width: 60%; text-align: center;">
+                    <b>Authors:</b> Saeed, Muhammad Saad and Khan, Muhammad Haris and Nawaz, Shah and Yousaf, Muhammad Haroon and Del Bue, Alessio
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Organizers -->
+        <div class="descriptions" id="organizers" style="background-color: var(--tertiary-color);">
+            <p class="description-headings">ORGANIZERS</p>
+            <p>
+                <a href="https://hcai.at/persons/moscati/">Marta Moscati</a> -
+                <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria</span> <br>
+
+            <a href="https://ahmedembeddedxx.github.io/">Ahmed Abdullah</a> -
+            <span style="font-size: 12px;">National University of Computer and Emerging Sciences, Pakistan</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=uyhEJ5IAAAAJ&hl=en">Muhammad Saad Saeed</a> -
+            <span style="font-size: 12px;">University of Michigan, USA</span> <br>
+
+            <a href="https://shahnawazgrewal.github.io/">Shah Nawaz</a> -
+            <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria</span> <br>
+
+            <a href="https://sites.google.com/view/rohankumardas">Rohan Kumar Das</a> -
+            <span style="font-size: 12px;">Fortemedia Singapore, Singapore</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=nFxWrXEAAAAJ&hl=en">Muhammad Zaigham Zaheer</a> -
+            <span style="font-size: 12px;">Mohamed bin Zayed University of Artificial Intelligence, United Arab Emirates</span> <br>
+
+            <a href="#">Junaid Mir</a> -
+            <span style="font-size: 12px;">University of Engineering and Technology Taxila, Pakistan</span> <br>
+
+            <a href="https://fms.uettaxila.edu.pk/Profile/haroon.yousaf">Muhammad Haroon Yousaf</a> -
+            <span style="font-size: 12px;">University of Engineering and Technology Taxila, Pakistan</span> <br>
+
+            <a href="https://scholar.google.com/citations?user=MZGQT2wAAAAJ&hl=en">Khalid Malik</a> -
+            <span style="font-size: 12px;">University of Michigan, USA</span> <br>
+
+            <a href="http://www.mschedl.eu/">Markus Schedl</a> -
+            <span style="font-size: 12px;">Institute of Computational Perception, Johannes Kepler University Linz, Austria | Human-centered AI Group, AI Lab, Linz Institute of Technology, Austria</span> <br>
+
+        </p>
+
+        </div>
+
+        <!-- Past Challenges -->
+        <div class="descriptions" id="past-challenges" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
+            <p class="description-headings">PREVIOUS EDITIONS</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                <a href="mavceleb-2026/competition.html" style="all: initial; width: 100%; display: flex; justify-content: center;">
+                    <div class="challenge-button-div" style="width: 100%;">
+                        <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
+                            <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
+                            FAME Challenge 2026
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mavceleb-2024/competition.html" style="all: initial; width: 100%; display: flex; justify-content: center;">
+                    <div class="challenge-button-div" style="width: 100%;">
+                        <div class="challenge-button" style="background: #888; opacity: 0.6; filter: grayscale(80%); box-shadow: none;">
+                            <p class="description-headings" style="padding: 0; margin: 0%; color: #eee; text-decoration: line-through; font-style: italic;">
+                            FAME Challenge 2024
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+
+        </div>
+    </div>
+
+</body>
+</html>
