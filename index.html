@@ -283,6 +283,7 @@
     <nav>
         <div>
             <a href="#home">Home</a>
+            <a href="overview.html">Overview</a>
             <a href="#task">Task</a>
             <a href="#dataset">Dataset</a>
             <a href="#baseline">Baseline</a>
@@ -312,15 +313,20 @@
         <div class="descriptions" id="introduction">
             <p class="description-headings">INTRODUCTION</p>
             <p>
+                <b>Can you identify a speaker across languages when you can't see their face? Or when you can't hear their voice?</b>
+                The POLYSIM 2027 Challenge tackles this critical question in multimodal biometrics.
+                <br><br>
                 Recent years have seen significant advances in multimodal biometric systems that leverage both facial and
                 vocal characteristics for speaker identification. However, real-world applications often face scenarios where
-                one modality is unavailable due to technical constraints, privacy concerns, or environmental factors. Building
-                upon this challenge, we introduce the POLYSIM 2027 task that focuses on polyglot (multilingual) speaker
-                identification when either the face or voice modality is missing. This addresses the critical question:
-                "Can speakers be accurately identified across multiple languages when only partial multimodal information is available?".
+                one modality is unavailable due to technical constraints, privacy concerns, or environmental factors.
                 <br><br>
-                This question is crucial for developing robust multilingual biometric systems that can operate under real-world
-                constraints. To support this research, we provide the Multilingual Audio-Visual (MAV-CELEB) dataset, containing
+                The POLYSIM 2027 Challenge addresses these real-world multimodal biometric scenarios where facial or vocal
+                data may be unavailable. Participants will develop robust speaker identification systems that maintain
+                accuracy across multiple languages (polyglot) even when face or voice modality is completely missing.
+                This challenge simulates practical constraints in biometric systems, addressing the critical question:
+                "Can speakers be accurately identified across multiple languages when only partial multimodal information is available?"
+                <br><br>
+                To support this research, we provide the Multilingual Audio-Visual (MAV-CELEB) dataset, containing
                 human speech clips of 154 identities with multiple language annotations extracted from various videos uploaded
                 online. The dataset enables investigation of speaker identification across languages while handling missing
                 modality scenarios, addressing both the polyglot and incomplete data challenges that are prevalent in
@@ -332,6 +338,18 @@
             <p>
                 Figure 1: Diagram showing multimodal speaker identification across multiple languages with missing modality scenarios.
             </p>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="descriptions" id="quick-facts" style="background-color: var(--tertiary-color); padding-bottom: 2vh;">
+            <p class="description-headings">QUICK FACTS</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>📊 <b>Dataset:</b> 154 identities across multiple languages</li>
+                <li>🎯 <b>Task:</b> Speaker identification with missing modalities</li>
+                <li>📅 <b>Timeline:</b> August 2026 - December 2026</li>
+                <li>🏆 <b>Venue:</b> ACM MM 2027 Grand Challenge</li>
+                <li>📈 <b>Metric:</b> Equal Error Rate (EER)</li>
+            </ul>
         </div>
         <!-- //////////////////////////////////////////////////////////////////////// -->
 
@@ -353,6 +371,24 @@
                 <p>Figure 2: The POLYSIM 2027 Challenge focuses on speaker identification across multiple languages with
 missing modalities (either face or voice may be absent).</p>
             </div>
+
+            <p><b>Key Objectives</b></p>
+            <ul>
+                <li>Benchmark state-of-the-art multimodal speaker identification systems</li>
+                <li>Evaluate robustness when face or voice modality is completely absent</li>
+                <li>Assess cross-lingual generalization across diverse language pairs</li>
+            </ul>
+        </div>
+
+        <!-- Why Participate -->
+        <div class="descriptions" id="why-participate" style="background-color: var(--tertiary-color);">
+            <p class="description-headings">WHY PARTICIPATE?</p>
+            <ul>
+                <li>Work with MAV-CELEB, a rich multilingual audio-visual dataset with 154 identities</li>
+                <li>Contribute to advancing robust multimodal biometric systems for real-world applications</li>
+                <li>Publish your approach in ACM MM Workshop proceedings</li>
+                <li>Compete for recognition on the public leaderboard</li>
+            </ul>
         </div>
 
         <!-- Dataset -->
