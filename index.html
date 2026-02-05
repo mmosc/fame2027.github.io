@@ -286,7 +286,7 @@
             <a href="overview.html">Overview</a>
             <a href="task.html">Task</a>
             <a href="resources.html">Resources</a>
-            <a href="#evaluation">Evaluation</a>
+            <a href="participate.html#evaluation">Evaluation</a>
             <a href="participate.html">Participate</a>
             <a href="#organizers">Organizers</a>
         </div>
@@ -350,92 +350,6 @@
             </ul>
         </div>
         <!-- //////////////////////////////////////////////////////////////////////// -->
-
-        <!-- Evaluation Metrics -->
-        <div class="descriptions" id="evaluation" style="background-color: var(--tertiary-color); padding-bottom: 2vh;">
-            <p class="description-headings">EVALUATION METRICS</p>
-            <p>
-                We are considering <b>Equal Error Rate (EER)</b> as the metric for
-                evaluating the challenge performance. We expect the challenge participants to submit a output score
-                file for every test pairs to indicate how confident the system believes to have a match between the
-                face and voice or in other words, the face and voice belongs to the same person. The higher the
-                score is, the larger is the confidence of being the face and voice from the same person. In real-world
-                applications, people may set a threshold to determine the if the pair belongs to same or different
-                person as binary output. With the threshold higher, the false acceptance rate (FAR) will become lower,
-                and the false rejection rate (FRR) will become higher. The EER is that optial point when both the errors
-                FAR and FRR are equal. Therefore, EER becomes suitable to evaluate the performance of systems than the
-                conventional accuracy since it independent of the threshold. Finally, the lower the EER it can characterize
-                a better system.
-                For more information please see <a href="https://arxiv.org/abs/2508.04592">evaluation plan.</a>
-            </p>
-        </div>
-
-        <!-- Submission -->
-        <div class="descriptions" id="submission">
-            <p class="description-headings">SUBMISSION</p>
-            <p>
-                Within the directory containing the submission files, use
-                zip archive.zip *.txt and do not zip the folder. Files should be
-                named as:
-                <ul>
-                <code>
-                    <li>sub score English heard.txt</li>
-                    <li>sub score English unheard.txt</li>
-                    <li>sub score Urdu heard.txt</li>
-                    <li>sub score Urdu unheard.txt</li>
-                </code>
-                </ul>
-                Files are submitted through Codalab in the evaluation phase
-                3 times per day.
-            </p>
-
-            <p>
-                We provide both train and test splits for v3 of MAV-Celeb dataset.
-                Participants can use this split for fine-tuning their method. However, for v1 the test files
-                are in format as below:
-                <ul>
-                <code>
-                    <li>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg</li>
-                    <li>tog3zj45 voices/English/00001.wav faces/English/00001.jpg</li>
-                    <li>ky5xfj1d voices/English/00002.wav faces/English/00002.jpg</li>
-                    <li>yx4nfa35 voices/English/01062.wav faces/English/01062.jpg</li>
-                    <li>bowsaf5e voices/English/01063.wav faces/English/01063.jpg</li>
-                </code>
-                </ul>
-                We have kept the ground truth for fair evaluation during POLYSIM challenge. Participants are expected
-                to compute and submit a text file including the id and L2 Scores in the following format:
-                <ul>
-                <code>
-                    <li>ysuvkz41 0.9988</li>
-                    <li>tog3zj45 0.1146</li>
-                    <li>ky5xfj1d 0.6514</li>
-                    <li>yx4nfa35 1.5321</li>
-                    <li>bowsaf5e 1.6578</li>
-                </code>
-                </ul>
-                The overall score will be computed as:<br>
-                <p style="text-align: center;"><code><b>Overall Score = (Sum of all EERs) / 4</b></code></p>
-                <br>
-                Link to Codalab: <a href="https://www.codabench.org/competitions/9467/">Codalab/Codabench</a>
-            </p>
-        </div>
-
-        <!-- Registration & Timeline -->
-        <div class="descriptions" id="registration" style="background-color: var(--tertiary-color); padding-bottom: 2vh;">
-            <p class="description-headings">REGISTRATION & TIMELINE</p>
-            <p>Registration details for the "POLYSIM Challenge 2027" will be announced soon.</p>
-            <p>For any queries please contact us at our email <a href="mailto:mavceleb@gmail.com">mavceleb@gmail.com</a>.</p>
-            <br>
-            <p><b>Timeline:</b></p>
-            <ul>
-                <li>Registration Period: 15 August – 15 October 2026</li>
-                <li>Progress Phase: 1 September – 31 October 2026</li>
-                <li>Evaluation Phase: 1 November – 15 November 2026</li>
-                <li>Challenge Results: 16 November 2026</li>
-                <li>Submission of System Descriptions: 25 November 2026</li>
-                <li>ACM MM Grand Challenge Paper Submission: 07 December 2026</li>
-            </ul>
-        </div>
 
         <!-- Organizers -->
         <div class="descriptions" id="organizers">
