@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLYSIM 2027 - Challenge Overview</title>
+    <title>POLYSIM 2027 - Dataset</title>
     <style>
         /* Including Monsterrat font */
         @font-face {
@@ -140,6 +140,22 @@
             margin: 0;
         }
 
+        /* Dataset */
+        .dataset-container{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .dataset-item{
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+            text-align: left;
+            height: 45vh;
+        }
+
         .footer{
             margin-top: 10vh;
             width: 100%;
@@ -168,6 +184,14 @@
             .banner-container{
                 height: 25vh;
             }
+
+            .dataset-container{
+                flex-direction: column;
+            }
+
+            .dataset-item{
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -179,7 +203,8 @@
             <a href="index.html">Home</a>
             <a href="overview.html">Overview</a>
             <a href="task.html">Task</a>
-            <a href="resources.html">Resources</a>
+            <a href="dataset.html">Dataset</a>
+            <a href="index.html#baseline">Baseline</a>
             <a href="index.html#evaluation">Evaluation</a>
             <a href="index.html#submission">Submission</a>
             <a href="index.html#registration">Registration</a>
@@ -192,34 +217,81 @@
         <div class="banner-container">
             <div class="card-container">
                 <p>
-                    <span style="font-family: montserrat_bold;"> Challenge Overview </span>
+                    <span style="font-family: montserrat_bold;"> Dataset </span>
                 </p>
             </div>
         </div>
 
-        <!-- Challenge Overview -->
-        <div class="descriptions" id="overview">
-            <p class="description-headings">CHALLENGE OVERVIEW</p>
+        <!-- Dataset Description -->
+        <div class="descriptions" id="dataset-description">
+            <p class="description-headings">DATASET DESCRIPTION</p>
 
-            <p><b>Motivation</b></p>
+            <p><b>Dataset Overview</b></p>
             <p>
-                Multimodal speaker classification systems typically assume the availability of all modalities
-                during inference. However, in real-world scenarios such as multimedia retrieval, surveillance,
-                and teleconferencing, one or more modalities may be unavailable due to occlusion, sensor
-                failure, or data corruption.
+                The dataset consists of paired face images/video frames and speech audio samples collected from
+                multiple speakers across different languages. The data is obtained from YouTube videos, consisting
+                of celebrity interviews along with talk shows, and television debates. The visual data spans over
+                a vast range of variations including poses, motion blur, background clutter, video quality, occlusions
+                and lighting conditions. Moreover, most videos contain real-world noise like background chatter, music,
+                over-lapping speech, and compression artifacts, resulting into a challenging dataset to evaluate
+                multimedia systems.
             </p>
-            <p>
-                Additionally, most existing systems are trained and tested on the same language, limiting
-                their applicability in multilingual environments.
-            </p>
-            <p>
-                This challenge aims to push the boundaries of:
-            </p>
+
+            <p><b>Modalities</b></p>
             <ul>
-                <li>Missing modality learning</li>
-                <li>Multimodal robustness</li>
-                <li>Cross-lingual speaker classification</li>
+                <li><b>Audio:</b> Speech segments</li>
+                <li><b>Visual:</b> Face images or face tracks</li>
+                <li><b>Labels:</b> Speaker ID</li>
             </ul>
+
+            <p><b>Data Splits</b></p>
+            <ul>
+                <li>Training set</li>
+                <li>Validation set</li>
+                <li>Test set (labels hidden)</li>
+            </ul>
+
+            <p><b>Missing Modality Setup</b></p>
+            <ul>
+                <li>Missing modalities occur only at test time</li>
+                <li>Missing modality is explicit and complete (face modality absent)</li>
+                <li>Training data always contains both modalities</li>
+            </ul>
+        </div>
+
+        <!-- Dataset Access -->
+        <div class="descriptions" id="dataset-access" style="background-color: var(--tertiary-color);">
+            <p class="description-headings">DATASET ACCESS</p>
+
+            <div class="dataset-container">
+                <div class="dataset-item">
+                    <p>The dataset is available on the following links:</p>
+                    <ul>
+                        <li>MAV-CELEB v1</li>
+                        <ul>
+                            <li><a href="https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing">Raw files link</a></li>
+                            <li><a href="https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing">Train/Test Split</a></li>
+                        </ul>
+                        <li>MAV-Celeb v3</li>
+                        <ul>
+                            <li><a href="">Raw files link</a></li>
+                            <li><a href="">Train/Test Split</a></li>
+                        </ul>
+                    </ul>
+                    <p>
+                        To view the meta-data for the dataset, you can view the PDFs attached below:
+                        <ul>
+                            <li><a href="./static/docs/v1_meta.pdf">v1 meta-data file</a></li>
+                            <li><a href="./static/docs/v3_meta.txt">v3 meta-data file</a></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="dataset-item" style="overflow-y: scroll;">
+                    <p>The file structure is like:</p>
+                    <img src="./static/images/dataset_structure_2.png">
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->

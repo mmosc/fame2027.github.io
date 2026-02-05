@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLYSIM 2027 - Challenge Overview</title>
+    <title>POLYSIM 2027 - Task</title>
     <style>
         /* Including Monsterrat font */
         @font-face {
@@ -192,34 +192,116 @@
         <div class="banner-container">
             <div class="card-container">
                 <p>
-                    <span style="font-family: montserrat_bold;"> Challenge Overview </span>
+                    <span style="font-family: montserrat_bold;"> Task </span>
                 </p>
             </div>
         </div>
 
-        <!-- Challenge Overview -->
-        <div class="descriptions" id="overview">
-            <p class="description-headings">CHALLENGE OVERVIEW</p>
+        <!-- Task Description -->
+        <div class="descriptions" id="task-description">
+            <p class="description-headings">TASK DESCRIPTION</p>
 
-            <p><b>Motivation</b></p>
+            <p><b>Task Definition</b></p>
             <p>
-                Multimodal speaker classification systems typically assume the availability of all modalities
-                during inference. However, in real-world scenarios such as multimedia retrieval, surveillance,
-                and teleconferencing, one or more modalities may be unavailable due to occlusion, sensor
-                failure, or data corruption.
-            </p>
-            <p>
-                Additionally, most existing systems are trained and tested on the same language, limiting
-                their applicability in multilingual environments.
-            </p>
-            <p>
-                This challenge aims to push the boundaries of:
+                The task is closed-set speaker classification using:
             </p>
             <ul>
-                <li>Missing modality learning</li>
-                <li>Multimodal robustness</li>
-                <li>Cross-lingual speaker classification</li>
+                <li>Audio (voice)</li>
+                <li>Visual (face)</li>
             </ul>
+            <p>
+                Participants must design a single unified model that can handle different testing conditions without retraining.
+            </p>
+        </div>
+
+        <!-- Task Settings -->
+        <div class="descriptions" id="task-settings" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
+            <p class="description-headings">TASK SETTINGS</p>
+            <p>
+                The challenge includes four task settings, covering multimodal, missing-modality, and cross-lingual scenarios.
+            </p>
+
+            <p><b>P3. In-Language Multimodal</b></p>
+            <ul>
+                <li><b>Training:</b> Audio + Face modalities</li>
+                <li><b>Testing:</b> Audio + Face modalities</li>
+                <li><b>Language:</b> Same language in training and testing</li>
+            </ul>
+            <p>
+                This is the standard multimodal setting where both modalities are fully available and no language shift is present.
+            </p>
+
+            <p><b>P4. Missing-Modality (Audio-Only)</b></p>
+            <ul>
+                <li><b>Training:</b> Audio + Face modalities</li>
+                <li><b>Testing:</b> Audio modality only</li>
+                <li><b>Language:</b> Same language in training and testing</li>
+            </ul>
+            <p>
+                The face modality is completely missing at test time. Models must perform speaker classification using audio only, without retraining.
+            </p>
+
+            <p><b>P5. Cross-Lingual Multimodal</b></p>
+            <ul>
+                <li><b>Training:</b> Audio + Face modalities</li>
+                <li><b>Testing:</b> Audio + Face modalities</li>
+                <li><b>Language:</b> Different languages for training and testing</li>
+            </ul>
+            <p>
+                This setting evaluates the ability of models to generalize across languages when both modalities are available.
+            </p>
+
+            <p><b>P6. Cross-Lingual Missing-Modality</b></p>
+            <ul>
+                <li><b>Training:</b> Audio + Face modalities</li>
+                <li><b>Testing:</b> Audio modality only</li>
+                <li><b>Language:</b> Different languages for training and testing</li>
+            </ul>
+            <p>
+                This is the most challenging scenario, combining:
+            </p>
+            <ul>
+                <li>Cross-lingual testing</li>
+                <li>Missing face modality during inference</li>
+            </ul>
+
+            <p><b>Task Settings Summary Table</b></p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px; margin-bottom: 20px;">
+                <thead>
+                    <tr style="background-color: var(--main-color); color: var(--secondary-color);">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Setting</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Training Modalities</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Testing Modalities</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Language</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><b>P3</b></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Same</td>
+                    </tr>
+                    <tr style="background-color: #f5f5f5;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><b>P4</b></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio only</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Same</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><b>P5</b></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Cross-lingual</td>
+                    </tr>
+                    <tr style="background-color: #f5f5f5;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><b>P6</b></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio + Face</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Audio only</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Cross-lingual</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Footer -->
