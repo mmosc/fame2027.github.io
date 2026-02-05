@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLYSIM 2027 - Challenge Overview</title>
+    <title>POLYSIM 2027 - Participate</title>
     <style>
         /* Including Monsterrat font */
         @font-face {
@@ -191,33 +191,131 @@
         <div class="banner-container">
             <div class="card-container">
                 <p>
-                    <span style="font-family: montserrat_bold;"> Challenge Overview </span>
+                    <span style="font-family: montserrat_bold;"> Participate </span>
                 </p>
             </div>
         </div>
 
-        <!-- Challenge Overview -->
-        <div class="descriptions" id="overview">
-            <p class="description-headings">CHALLENGE OVERVIEW</p>
+        <!-- Registration & Timeline -->
+        <div class="descriptions" id="registration">
+            <p class="description-headings">REGISTRATION & TIMELINE</p>
+            <p>Registration details for the "POLYSIM Challenge 2027" will be announced soon.</p>
+            <p>For any queries please contact us at our email <a href="mailto:mavceleb@gmail.com">mavceleb@gmail.com</a>.</p>
+            <br>
+            <p><b>Timeline:</b></p>
+            <ul>
+                <li>Registration Period: 15 August – 15 October 2026</li>
+                <li>Progress Phase: 1 September – 31 October 2026</li>
+                <li>Evaluation Phase: 1 November – 15 November 2026</li>
+                <li>Challenge Results: 16 November 2026</li>
+                <li>Submission of System Descriptions: 25 November 2026</li>
+                <li>ACM MM Grand Challenge Paper Submission: 07 December 2026</li>
+            </ul>
+        </div>
 
-            <p><b>Motivation</b></p>
+        <!-- Submission Guidelines -->
+        <div class="descriptions" id="submission-guidelines" style="background-color: var(--tertiary-color);">
+            <p class="description-headings">SUBMISSION GUIDELINES</p>
+
+            <p><b>Submission Format</b></p>
             <p>
-                Multimodal speaker classification systems typically assume the availability of all modalities
-                during inference. However, in real-world scenarios such as multimedia retrieval, surveillance,
-                and teleconferencing, one or more modalities may be unavailable due to occlusion, sensor
-                failure, or data corruption.
+                Participants must submit a CSV file containing predictions for the test set.
             </p>
+            <p><b>Format:</b></p>
+            <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">sample_id,predicted_speaker_id</pre>
+
+            <p><b>Submission Rules</b></p>
+            <ul>
+                <li>Limited number of submissions per day (3 submissions maximum)</li>
+                <li>Only the final submission will be used for ranking</li>
+                <li>Test labels are never released</li>
+            </ul>
+        </div>
+
+        <!-- Submission Details -->
+        <div class="descriptions" id="submission-details">
+            <p class="description-headings">SUBMISSION DETAILS</p>
             <p>
-                Additionally, most existing systems are trained and tested on the same language, limiting
-                their applicability in multilingual environments.
-            </p>
-            <p>
-                This challenge aims to push the boundaries of:
+                Within the directory containing the submission files, use
+                <code>zip archive.zip *.txt</code> and do not zip the folder. Files should be
+                named as:
             </p>
             <ul>
-                <li>Missing modality learning</li>
-                <li>Multimodal robustness</li>
-                <li>Cross-lingual speaker classification</li>
+                <code>
+                    <li>sub_score_English_heard.txt</li>
+                    <li>sub_score_English_unheard.txt</li>
+                    <li>sub_score_Urdu_heard.txt</li>
+                    <li>sub_score_Urdu_unheard.txt</li>
+                </code>
+            </ul>
+            <p>
+                Files are submitted through Codalab in the evaluation phase, with a maximum of 3 submissions per day.
+            </p>
+
+            <p>
+                We provide both train and test splits for v3 of MAV-Celeb dataset.
+                Participants can use this split for fine-tuning their method. However, for v1 the test files
+                are in format as below:
+            </p>
+            <ul>
+                <code>
+                    <li>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg</li>
+                    <li>tog3zj45 voices/English/00001.wav faces/English/00001.jpg</li>
+                    <li>ky5xfj1d voices/English/00002.wav faces/English/00002.jpg</li>
+                    <li>yx4nfa35 voices/English/01062.wav faces/English/01062.jpg</li>
+                    <li>bowsaf5e voices/English/01063.wav faces/English/01063.jpg</li>
+                </code>
+            </ul>
+            <p>
+                We have kept the ground truth for fair evaluation during POLYSIM challenge. Participants are expected
+                to compute and submit a text file including the id and L2 Scores in the following format:
+            </p>
+            <ul>
+                <code>
+                    <li>ysuvkz41 0.9988</li>
+                    <li>tog3zj45 0.1146</li>
+                    <li>ky5xfj1d 0.6514</li>
+                    <li>yx4nfa35 1.5321</li>
+                    <li>bowsaf5e 1.6578</li>
+                </code>
+            </ul>
+            <p>
+                The overall score will be computed as:
+            </p>
+            <p style="text-align: center;"><code><b>Overall Score = (Sum of all EERs) / 4</b></code></p>
+            <br>
+            <p>
+                <b>Link to Codalab:</b> <a href="https://www.codabench.org/competitions/9467/">Codalab/Codabench</a>
+            </p>
+        </div>
+
+        <!-- Rules & Policies -->
+        <div class="descriptions" id="rules-policies" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
+            <p class="description-headings">RULES & POLICIES</p>
+
+            <p><b>Participation</b></p>
+            <ul>
+                <li>Open to academic and industry researchers</li>
+                <li>Teams may consist of multiple members</li>
+                <li>One submission account per team</li>
+            </ul>
+
+            <p><b>Model Constraints</b></p>
+            <ul>
+                <li>A single model must be used for all task settings</li>
+                <li>Retraining per setting is not allowed</li>
+            </ul>
+
+            <p><b>External Data</b></p>
+            <ul>
+                <li>Use of external data must be clearly declared</li>
+                <li>Pretrained models are allowed unless otherwise stated</li>
+            </ul>
+
+            <p><b>Ethical Use</b></p>
+            <ul>
+                <li>Dataset is provided strictly for research purposes</li>
+                <li>Any misuse for surveillance or identity tracking is prohibited</li>
             </ul>
         </div>
 
