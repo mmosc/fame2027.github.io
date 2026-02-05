@@ -207,7 +207,7 @@
         <div class="banner-container">
             <div class="card-container">
                 <p>
-                    <span style="font-family: montserrat_bold;"> Task </span>
+                    <span style="font-family: montserrat_bold;"> Overview </span>
                 </p>
             </div>
         </div>
@@ -216,7 +216,7 @@
         <div class="descriptions" id="task" style="padding-bottom: 4vh;">
             <p class="description-headings">TASK</p>
 
-            <p><b>Motivation</b></p>
+            <!-- <p><b>Motivation</b></p> -->
             <p>
                 Multimodal speaker classification systems typically assume the availability of all modalities
                 during inference. However, in real-world scenarios such as multimedia retrieval, surveillance,
@@ -233,7 +233,8 @@
                 <li>Cross-lingual speaker classification</li>
             </ul>
 
-            <p><b>Task Description</b></p>
+            <p class="description-headings">Task Description and Settings</p>
+            <!-- <p><b></b></p> -->
             <p>
                 The goal of the POLYSIM 2027 challenge is to identify speakers across multiple languages when either
                 the face or voice modality is missing. Participants must develop models that can handle three scenarios:
@@ -254,12 +255,12 @@
                 Participants must design a single unified model that can handle different testing conditions without retraining.
             </p>
             <div class="figures">
-                <img src="./static/images/fame_2026.jpg">
+                <img src="./static/images/polysim_2026.jpg">
                 <p>Figure 1: The POLYSIM 2027 Challenge focuses on speaker identification across multiple languages with
 missing modalities (either face or voice may be absent).</p>
             </div>
 
-            <p><b>Task Settings</b></p>
+            <!-- <p><b>Task Settings</b></p> -->
             <p>
                 The challenge includes four task settings, covering multimodal, missing-modality, and cross-lingual scenarios.
             </p>
@@ -308,7 +309,7 @@ missing modalities (either face or voice may be absent).</p>
                 <li>Missing face modality during inference</li>
             </ul>
 
-            <p><b>Task Settings Summary Table</b></p>
+            <!-- <p><b>Task Settings Summary Table</b></p> -->
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px; margin-bottom: 20px;">
                 <thead>
                     <tr style="background-color: var(--main-color); color: var(--secondary-color);">
@@ -351,7 +352,7 @@ missing modalities (either face or voice may be absent).</p>
         <div class="descriptions" id="evaluation" style="background-color: var(--tertiary-color); padding-bottom: 4vh;">
             <p class="description-headings">EVALUATION PROTOCOL</p>
 
-            <p><b>Metrics</b></p>
+            <!-- <p><b>Metrics</b></p> -->
             <p>Performance will be evaluated using:</p>
             <ul>
                 <li>Top-1 Accuracy</li>
@@ -374,7 +375,7 @@ missing modalities (either face or voice may be absent).</p>
                 For more information please see the <a href="https://arxiv.org/abs/2508.04592">evaluation plan.</a>
             </p>
 
-            <p><b>Ranking Criteria</b></p>
+            <!-- <p><b>Ranking Criteria</b></p> -->
             <ul>
                 <li>Scores are computed separately for P3, P4, P5, and P6</li>
                 <li>Final ranking is based on the average performance across all settings</li>
