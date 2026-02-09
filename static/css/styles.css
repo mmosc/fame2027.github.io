@@ -303,18 +303,15 @@ nav a:hover {
 /* Image area with consistent aspect ratio (like speaker cards) */
 .organizer-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* 🔒 fixed square */
+  height: 180px;   /* or 200px */
   overflow: hidden;
 }
 
 .organizer-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* crops instead of stretching */
-  object-position: center;
-  display: block;
+  object-fit: cover;
 }
-
 
 .organizer-card:hover .organizer-img-wrap img {
   filter: saturate(1.05) contrast(1.03);
