@@ -302,22 +302,19 @@ nav a:hover {
 
 /* Image area with consistent aspect ratio (like speaker cards) */
 .organizer-img-wrap {
-  position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;              /* square like the reference */
-  background: rgba(0, 0, 0, 0.04);  /* pleasant placeholder while loading */
+  aspect-ratio: 1 / 1;   /* 🔒 fixed square */
+  overflow: hidden;
 }
 
 .organizer-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;     /* crops instead of stretching */
+  object-position: center;
   display: block;
-
-  /* Professional look: slightly desaturated until hover */
-  filter: saturate(0.95) contrast(1.02);
-  transition: filter 160ms ease, transform 160ms ease;
 }
+
 
 .organizer-card:hover .organizer-img-wrap img {
   filter: saturate(1.05) contrast(1.03);
