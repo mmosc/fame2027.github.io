@@ -60,52 +60,6 @@
             </p>
             <!-- <p><b>Format:</b></p> -->
             <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">sample_id,predicted_speaker_id</pre>
-            <p>
-                Within the directory containing the submission files, use
-                <code>zip archive.zip *.txt</code> and do not zip the folder. Files should be
-                named as:
-            </p>
-            <ul>
-                <code>
-                    <li>submission_v1_<phase>_English_English.csv </li>
-                    <li>submission_v1_<phase>_English_Urdu.csv </li>
-                </code>
-            </ul>
-            <p>
-                Files are submitted through Codalab in the evaluation phase, with a maximum of 3 submissions per day.
-            </p>
-
-            <p>
-                We provide both train and test splits for v3 of MAV-Celeb dataset.
-                Participants can use this split for fine-tuning their method. However, for v1 the test files
-                are in format as below:
-            </p>
-            <ul>
-                <code>
-                    <li>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg</li>
-                    <li>tog3zj45 voices/English/00001.wav faces/English/00001.jpg</li>
-                    <li>ky5xfj1d voices/English/00002.wav faces/English/00002.jpg</li>
-                    <li>yx4nfa35 voices/English/01062.wav faces/English/01062.jpg</li>
-                    <li>bowsaf5e voices/English/01063.wav faces/English/01063.jpg</li>
-                </code>
-            </ul>
-            <p>
-                We have kept the ground truth for fair evaluation during POLYSIM challenge. Participants are expected
-                to compute and submit a text file including the id and L2 Scores in the following format:
-            </p>
-            <ul>
-                <code>
-                    <li>ysuvkz41 0.9988</li>
-                    <li>tog3zj45 0.1146</li>
-                    <li>ky5xfj1d 0.6514</li>
-                    <li>yx4nfa35 1.5321</li>
-                    <li>bowsaf5e 1.6578</li>
-                </code>
-            </ul>
-            <p>
-                The overall score will be computed as:
-            </p>
-            <p style="text-align: center;"><code><b>Overall Score = (Sum of all EERs) / 4</b></code></p>
             <br>
         </div>
 
